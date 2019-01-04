@@ -3,10 +3,12 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using ErikTheCoder.ServiceContract;
+using JetBrains.Annotations;
 
 
 namespace ErikTheCoder.ServiceProxy
 {
+    [UsedImplicitly]
     public class ProxyMessageHandler : DelegatingHandler
     {
         private readonly Func<Guid> _getCorrelationId;
