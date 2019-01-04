@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>ErikTheCoder.ServiceProxy</RootNamespace>
+    <AssemblyName>ErikTheCoder.ServiceProxy</AssemblyName>
+    <Authors>Erik Madsen</Authors>
+    <Description>Leverages Refit to create strongly-typed REST service proxies that include authorization and message correlation.</Description>
+    <Copyright>2019</Copyright>
+    <PackageProjectUrl>https://github.com/ekmadsen/ServiceProxy</PackageProjectUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageTags>refit rest-api service-proxy correlation</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <RepositoryUrl>https://github.com/ekmadsen/ServiceProxy</RepositoryUrl>
+    <Version>1.0.1</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ErikTheCoder.ServiceContract" Version="1.0.0" />
+    <PackageReference Include="JetBrains.Annotations" Version="2018.2.1" />
+    <PackageReference Include="Refit" Version="4.6.58" />
+  </ItemGroup>
+
+</Project>

@@ -3,3 +3,8 @@
 ################################################################################
 
 /.vs
+/Service Proxy/bin
+/Service Proxy/.vs/Service Proxy/DesignTimeBuild/.dtbcache
+/Service Proxy/obj
+/Service Proxy/.vs/Service Proxy/v15/Server/sqlite3
+/Service Proxy.sln.DotSettings.user
