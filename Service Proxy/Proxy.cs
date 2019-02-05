@@ -10,11 +10,11 @@ namespace ErikTheCoder.ServiceProxy
     public static class Proxy
     {
         [UsedImplicitly]
-        public static T For<T>(string ServiceUrlRoot, string Jwt, Func<Guid> GetCorrelationId)
+        public static T For<T>(string ServiceUrlRoot, string AuthenticationToken, Func<Guid> GetCorrelationId)
         {
             ProxyMessageHandler proxyMessageHandler = new ProxyMessageHandler(GetCorrelationId);
             HttpClient httpClient = new HttpClient(proxyMessageHandler) { BaseAddress = new Uri(ServiceUrlRoot) };
-            httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {Jwt}");
+            httpClient.DefaultRequestHeaders.Add("Authorization", AuthenticationToken);
             return RestService.For<T>(httpClient);
         }
     }
