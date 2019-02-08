@@ -75,4 +75,4 @@ public async Task<IActionResult> Login(LoginModel Model)
 
 ## Benefits
 
-You can create, configure, and dependency-inject thread-safe proxies in a single location- the .NET Core application's Startup class.  Then use the proxies in the application's MVC or WebAPI controllers by simply calling their methods.  You do not need to perform any further configuration, cleanup, or [code ceremony](http://thinkrelevance.com/blog/2008/04/23/refactoring-from-ceremony-to-essence) in the controller code.
+You can create, configure, and dependency-inject thread-safe proxies in a single location: the .NET Core application's Startup class.  Then use the proxies in the application's MVC or WebAPI controllers by simply calling their methods.  You do not need to perform any further configuration, cleanup, or [code ceremony](http://thinkrelevance.com/blog/2008/04/23/refactoring-from-ceremony-to-essence) in the controller code.
