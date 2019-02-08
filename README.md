@@ -13,6 +13,11 @@ I was motivated to write this component to simplify the configuration of [Refit]
 * **Automatically passes authentication token and correlation ID** to service so client is authenticated and code execution can be traced accross process boundaries, related by correlation ID. 
 
 
+## Related Solution
+
+If you're developing an ASP.NET Core MVC website or WebAPI service, I highly recommend installing my [AspNetCore.Middleware](https://github.com/ekmadsen/AspNetCore.Middleware) package, which uses this component and others to eliminate a lot of boilerplate code.
+
+
 ## Installation
 
 Reference this component in your application via its [NuGet package](https://www.nuget.org/packages/ErikTheCoder.ServiceProxy/).
