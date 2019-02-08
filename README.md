@@ -25,7 +25,7 @@ Reference this component in your application via its [NuGet package](https://www
 
 ## Usage
 
-Create and inject proxy dependency in Startup.ConfigureServices:
+Create and inject proxy dependencies in Startup.ConfigureServices:
 
 ```C#
 // Create service proxies.
@@ -40,7 +40,7 @@ Services.AddSingleton(typeof(ILogger), logger);
 Services.AddSingleton(typeof(IAccountService), accountService);
 ```
 
-Inject and use proxy in a controller class:
+Inject and use proxies in a controller class:
 
 ```C#
 namespace ErikTheCoder.MadPoker.Website.Controllers
