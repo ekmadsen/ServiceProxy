@@ -9,7 +9,7 @@
     <Copyright>2019</Copyright>
     <PackageProjectUrl>https://github.com/ekmadsen/ServiceProxy</PackageProjectUrl>
     <RepositoryType>GitHub</RepositoryType>
-    <PackageTags>refit rest-api service-proxy correlation</PackageTags>
+    <PackageTags>refit rest-api service-proxy authentication correlation</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/ekmadsen/ServiceProxy</RepositoryUrl>
     <Version>1.0.4</Version>
