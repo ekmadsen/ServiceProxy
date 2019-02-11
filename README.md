@@ -75,6 +75,6 @@ public async Task<IActionResult> Login(LoginModel Model)
 
 ## Benefits
 
-You can create, configure, and dependency-inject thread-safe service proxies in a single location: the .NET Core application's Startup class.  Then use the proxies in the application's MVC or WebAPI controllers by simply calling their methods.  You do not need to perform any further proxy configuration, cleanup, or *code ceremony* in the controller code.
+You can create, configure, and dependency-inject thread-safe service proxies in a single location: the .NET Core application's Startup class.  Then use the proxies in the application's MVC or WebAPI controllers by simply calling their methods.  You do not need to perform any further proxy configuration, disposal, or *code ceremony* in the controller code.
 
 By *code ceremony* I mean wordy code that does not concisely express the programmer's intent.  C#'s [expression-bodied function members](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-6#expression-bodied-function-members) is a great example of a programming language syntax that eliminates code ceremony.
