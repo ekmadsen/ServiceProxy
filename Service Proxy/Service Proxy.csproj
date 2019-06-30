@@ -12,7 +12,8 @@
     <PackageTags>refit rest-api service-proxy authentication correlation</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/ekmadsen/ServiceProxy</RepositoryUrl>
-    <Version>1.0.5</Version>
+    <Version>1.0.6</Version>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -20,13 +21,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ErikTheCoder.ServiceContract" Version="1.0.6" />
-    <PackageReference Include="JetBrains.Annotations" Version="2018.3.0" />
-    <PackageReference Include="NuGet.CommandLine" Version="4.9.4">
+    <PackageReference Include="ErikTheCoder.ServiceContract" Version="1.0.12" />
+    <PackageReference Include="JetBrains.Annotations" Version="2019.1.1" />
+    <PackageReference Include="NuGet.CommandLine" Version="5.0.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Refit" Version="4.6.99" />
+    <PackageReference Include="Refit" Version="4.7.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
