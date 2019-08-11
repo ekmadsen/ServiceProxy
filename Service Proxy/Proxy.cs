@@ -1,21 +1,22 @@
-﻿using System;
-using System.Net.Http;
-using JetBrains.Annotations;
-using Refit;
+﻿using JetBrains.Annotations;
 
 
 namespace ErikTheCoder.ServiceProxy
 {
-    [UsedImplicitly]
-    public static class Proxy
+    public class Proxy<T>
     {
         [UsedImplicitly]
-        public static T For<T>(string ServiceUrlRoot, string AuthenticationToken, Func<Guid> GetCorrelationId)
+        public T AsAdmin { get; }
+
+
+        [UsedImplicitly]
+        public T AsUser { get; }
+
+
+        public Proxy(T AdminService, T UserService)
         {
-            ProxyMessageHandler proxyMessageHandler = new ProxyMessageHandler(GetCorrelationId);
-            HttpClient httpClient = new HttpClient(proxyMessageHandler) { BaseAddress = new Uri(ServiceUrlRoot) };
-            httpClient.DefaultRequestHeaders.Add("Authorization", AuthenticationToken);
-            return RestService.For<T>(httpClient);
+            AsAdmin = AdminService;
+            AsUser = UserService;
         }
     }
 }
