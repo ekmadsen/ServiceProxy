@@ -11,14 +11,14 @@ namespace ErikTheCoder.ServiceProxy
     [UsedImplicitly]
     public class ProxyMessageHandler : DelegatingHandler
     {
-        private const string _authenticationHeader = "Authorization";
-        private readonly Func<string> _getAuthenticationToken;
+        private const string _authHeader = "Authorization";
+        private readonly Func<string> _getAuthToken;
         private readonly Func<Guid> _getCorrelationId;
 
 
-        public ProxyMessageHandler(Func<string> GetAuthenticationToken, Func<Guid> GetCorrelationId)
+        public ProxyMessageHandler(Func<string> GetAuthToken, Func<Guid> GetCorrelationId)
         {
-            _getAuthenticationToken = GetAuthenticationToken;
+            _getAuthToken = GetAuthToken;
             _getCorrelationId = GetCorrelationId;
             InnerHandler = new HttpClientHandler();
         }
@@ -26,8 +26,10 @@ namespace ErikTheCoder.ServiceProxy
 
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage Request, CancellationToken CancellationToken)
         {
-            if (!Request.Headers.Contains(_authenticationHeader)) Request.Headers.Add(_authenticationHeader, _getAuthenticationToken());
-            if (!Request.Headers.Contains(CustomHttpHeader.CorrelationId)) Request.Headers.Add(CustomHttpHeader.CorrelationId, _getCorrelationId().ToString());
+            string authToken = _getAuthToken();
+            if (!string.IsNullOrEmpty(authToken) && !Request.Headers.Contains(_authHeader)) Request.Headers.Add(_authHeader, _getAuthToken());
+            Guid correlationId = _getCorrelationId();
+            if ((correlationId != Guid.Empty) && !Request.Headers.Contains(CustomHttpHeader.CorrelationId)) Request.Headers.Add(CustomHttpHeader.CorrelationId, _getCorrelationId().ToString());
             return await base.SendAsync(Request, CancellationToken);
         }
     }

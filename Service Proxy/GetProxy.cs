@@ -10,6 +10,14 @@ namespace ErikTheCoder.ServiceProxy
     public static class GetProxy
     {
         [UsedImplicitly]
+        public static Proxy<T> For<T>(string ServiceUrlRoot) => For<T>(ServiceUrlRoot, () => Guid.Empty);
+
+
+        [UsedImplicitly]
+        public static Proxy<T> For<T>(string ServiceUrlRoot, Func<Guid> GetCorrelationId) => For<T>(ServiceUrlRoot, () => null, () => null, GetCorrelationId);
+
+
+        [UsedImplicitly]
         public static Proxy<T> For<T>(string ServiceUrlRoot, Func<string> GetAdminAuthToken, Func<string> GetUserAuthToken, Func<Guid> GetCorrelationId)
         {
             // Create admin HTTP client.
