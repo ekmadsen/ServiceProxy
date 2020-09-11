@@ -21,11 +21,11 @@ namespace ErikTheCoder.ServiceProxy
         public static Proxy<T> For<T>(string ServiceUrlRoot, Func<string> GetAdminAuthToken, Func<string> GetUserAuthToken, Func<Guid> GetCorrelationId)
         {
             // Create admin HTTP client.
-            ProxyMessageHandler adminProxyMessageHandler = new ProxyMessageHandler(GetAdminAuthToken, GetCorrelationId);
-            HttpClient adminHttpClient = new HttpClient(adminProxyMessageHandler) { BaseAddress = new Uri(ServiceUrlRoot) };
+            var adminProxyMessageHandler = new ProxyMessageHandler(GetAdminAuthToken, GetCorrelationId);
+            var adminHttpClient = new HttpClient(adminProxyMessageHandler) { BaseAddress = new Uri(ServiceUrlRoot) };
             // Create user HTTP client.
-            ProxyMessageHandler userProxyMessageHandler = new ProxyMessageHandler(GetUserAuthToken, GetCorrelationId);
-            HttpClient userHttpClient = new HttpClient(userProxyMessageHandler) { BaseAddress = new Uri(ServiceUrlRoot) };
+            var userProxyMessageHandler = new ProxyMessageHandler(GetUserAuthToken, GetCorrelationId);
+            var userHttpClient = new HttpClient(userProxyMessageHandler) { BaseAddress = new Uri(ServiceUrlRoot) };
             return new Proxy<T>(RestService.For<T>(adminHttpClient), RestService.For<T>(userHttpClient));
         }
     }
