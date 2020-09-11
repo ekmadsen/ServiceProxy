@@ -26,9 +26,9 @@ namespace ErikTheCoder.ServiceProxy
 
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage Request, CancellationToken CancellationToken)
         {
-            string authToken = _getAuthToken();
+            var authToken = _getAuthToken();
             if (!string.IsNullOrEmpty(authToken) && !Request.Headers.Contains(_authHeader)) Request.Headers.Add(_authHeader, _getAuthToken());
-            Guid correlationId = _getCorrelationId();
+            var correlationId = _getCorrelationId();
             if ((correlationId != Guid.Empty) && !Request.Headers.Contains(CustomHttpHeader.CorrelationId)) Request.Headers.Add(CustomHttpHeader.CorrelationId, _getCorrelationId().ToString());
             return await base.SendAsync(Request, CancellationToken);
         }
