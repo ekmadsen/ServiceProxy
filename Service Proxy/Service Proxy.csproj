@@ -12,7 +12,7 @@
     <PackageTags>refit rest-api service-proxy authentication correlation</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/ekmadsen/ServiceProxy</RepositoryUrl>
-    <Version>1.0.10</Version>
+    <Version>1.0.11</Version>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
   </PropertyGroup>
 
@@ -21,7 +21,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ErikTheCoder.ServiceContract" Version="1.0.15" />
+    <PackageReference Include="ErikTheCoder.ServiceContract" Version="1.0.16" />
     <PackageReference Include="JetBrains.Annotations" Version="2020.1.0" />
     <PackageReference Include="NuGet.CommandLine" Version="5.7.0">
       <PrivateAssets>all</PrivateAssets>

@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using ErikTheCoder.ServiceContract;
+using ErikTheCoder.Utilities;
 using JetBrains.Annotations;
 
 
@@ -27,7 +28,7 @@ namespace ErikTheCoder.ServiceProxy
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage Request, CancellationToken CancellationToken)
         {
             var authToken = _getAuthToken();
-            if (!string.IsNullOrEmpty(authToken) && !Request.Headers.Contains(_authHeader)) Request.Headers.Add(_authHeader, _getAuthToken());
+            if (!authToken.IsNullOrEmpty() && !Request.Headers.Contains(_authHeader)) Request.Headers.Add(_authHeader, _getAuthToken());
             var correlationId = _getCorrelationId();
             if ((correlationId != Guid.Empty) && !Request.Headers.Contains(CustomHttpHeader.CorrelationId)) Request.Headers.Add(CustomHttpHeader.CorrelationId, _getCorrelationId().ToString());
             return await base.SendAsync(Request, CancellationToken);
