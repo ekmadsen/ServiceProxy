@@ -23,7 +23,7 @@
   <ItemGroup>
     <PackageReference Include="ErikTheCoder.ServiceContract" Version="1.0.19" />
     <PackageReference Include="JetBrains.Annotations" Version="2020.1.0" />
-    <PackageReference Include="NuGet.CommandLine" Version="5.7.0">
+    <PackageReference Include="NuGet.CommandLine" Version="5.9.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
